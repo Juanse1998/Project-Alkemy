@@ -1,5 +1,7 @@
 package com.myapp.library;
 
+import java.util.ArrayList;
+
 public class Book {
     private String author;
 
@@ -7,6 +9,9 @@ public class Book {
     private String ISBN;
     private String gender;
     private boolean available;
+    private Integer rating;
+
+    private ArrayList<Integer> listRating;
     String id;
 
     public Book (String title, String author, String gender, String ISBN) {
@@ -14,6 +19,8 @@ public class Book {
         this.author = author;
         this.gender = gender;
         this.ISBN = ISBN;
+        this.rating = 0;
+        this.listRating = new ArrayList<Integer>();
         this.available = true;
     }
 
@@ -38,6 +45,13 @@ public class Book {
         this.available = available;
     }
 
+    public void setListRating(Integer rating) {
+        this.listRating.add(rating);
+    }
+
+    public void setRating(Integer ratingProm) {
+        this.rating = ratingProm;
+    }
 
     public String getISBN() {
         return ISBN;
@@ -51,6 +65,10 @@ public class Book {
         return title;
     }
 
+    public ArrayList<Integer> getListRating() {
+        return this.listRating;
+    }
+
     public Boolean isAvailable() {
         return available;
     }
@@ -60,7 +78,7 @@ public class Book {
     }
 
     public String toString() {
-        return "\nTítulo: " + title + "\nGenero: " + gender + "\nAutor: " + author + "\nISBN: " + ISBN + "\nDisponible: " + available;
+        return "\nTítulo: " + title + "\nGenero: " + gender + "\nAutor: " + author + "\nISBN: " + ISBN + "\nRating:" + rating + "\nDisponible: " + available;
     }
 
 }

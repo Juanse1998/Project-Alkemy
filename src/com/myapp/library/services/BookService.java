@@ -40,6 +40,15 @@ public class BookService {
         library.removeIf(book -> book.getISBN().equals(ISBN));
     }
 
+    public void setQualify(Integer rating, Book book) {
+        book.setListRating(rating);
+        Integer sum = 0;
+        for (Integer ratings: book.getListRating()) {
+            sum += ratings;
+        }
+        book.setRating(sum/book.getListRating().size());
+    }
+
     public Book searchBookIsbn(String ISBN) {
         for(Book book: library)  {
             if (book.getISBN().equals(ISBN)) {

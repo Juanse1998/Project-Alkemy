@@ -12,8 +12,8 @@ public class UserService {
     }
 
 
-    public void createUser(String name) {
-        User newUser = new User(name);
+    public void createUser(String name, String dni) {
+        User newUser = new User(name, dni);
         users.add(newUser);
     }
 
@@ -23,22 +23,22 @@ public class UserService {
 
 
     // update user
-    public void updateUser(String name, String id) {
+    public void updateUser(String name, String dni) {
         for(User user: users) {
-            if (user.getId().equals(id)) {
+            if (user.getDni().equals(dni)) {
                 user.setName(name);
                 return;
             }
         };
     }
 
-    public void deleteUser(String id) {
-        users.removeIf(user -> user.getId().equals(id));
+    public void deleteUser(String dni) {
+        users.removeIf(user -> user.getDni().equals(dni));
     }
 
-    public User searchUser(String name) {
+    public User searchUser(String dni) {
         for(User user: users)  {
-            if (user.getName().equals(name)) {
+            if (user.getDni().equals(dni)) {
                 return user;
             }
         };
@@ -58,7 +58,6 @@ public class UserService {
         ArrayList<User> userBooks = new ArrayList<User>();
         for(User user: users) {
             if (!(user.getBooks().equals(null))) {
-                System.out.println("acaaaaaaaaaaaaaaaaaaaaa");
                 userBooks.add(user);
             }
         };

@@ -7,16 +7,17 @@ public class User {
 
     private ArrayList<Book> books;
 
-    String id;
+    String dni;
 
-    public User (String name) {
+    public User (String name, String dni) {
         this.name = name;
+        this.dni = dni;
         this.books = new ArrayList<Book>();
     }
 
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public void setName(String name) {
@@ -24,8 +25,8 @@ public class User {
     }
 
 
-    public String getId() {
-        return id;
+    public String getDni() {
+        return dni;
     }
 
     public String getName() {
@@ -41,7 +42,7 @@ public class User {
     }
 
     public String toString() {
-        return "Nombre: " + name + "\nLibros: " + books ;
+        return "Nombre: " + name + "\nDNI: " + dni + "\nLibros: " + books ;
     }
 
 }
