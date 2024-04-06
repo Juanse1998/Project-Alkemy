@@ -54,6 +54,17 @@ public class UserService {
         }
     }
 
+    public ArrayList<User> getAllBooksLend() {
+        ArrayList<User> userBooks = new ArrayList<User>();
+        for(User user: users) {
+            if (!(user.getBooks().equals(null))) {
+                System.out.println("acaaaaaaaaaaaaaaaaaaaaa");
+                userBooks.add(user);
+            }
+        };
+        return userBooks;
+    }
+
     public void returnBook(User user, Book book) {
         if (user.getBooks().contains(book)) {
             user.getBooks().remove(book);

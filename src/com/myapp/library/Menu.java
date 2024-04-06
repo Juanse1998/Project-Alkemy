@@ -76,6 +76,9 @@ public class Menu {
                 System.out.println(userService.getUsers());
                 break;
             case 9:
+                System.out.println(userService.getAllBooksLend());
+                break;
+            case 10:
                 System.out.println(bookService.getLibrary());
                 break;
         }

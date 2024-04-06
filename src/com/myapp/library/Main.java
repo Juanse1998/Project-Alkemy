@@ -15,7 +15,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Integer option = 0;
 
-        while (!option.equals(10)) {
+        while (!option.equals(11)) {
             System.out.println("1- Cargar libro");
             System.out.println("2- Cargar usuario");
             System.out.println("3- Buscar libro por ISBN");
@@ -24,11 +24,12 @@ public class Main {
             System.out.println("6- Buscar libro por genero");
             System.out.println("7- Prestar libro");
             System.out.println("8- Listar usuarios");
-            System.out.println("9- Listar Libros");
-            System.out.println("10- Salir");
+            System.out.println("9- Listar usuarios con libros prestados");
+            System.out.println("10- Listar Libros");
+            System.out.println("11- Salir");
             option = scanner.nextInt();
             menu.options(option);
         }
-        
+
     }
 }
